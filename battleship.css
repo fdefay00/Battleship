@@ -1,0 +1,67 @@
+body {
+	background-color: black;
+}
+div#board {
+	position: relative;
+	width: 1024px;
+	height: 863px;
+	margin: auto;
+	tborder: 1px red solid;
+	background: url("board.jpg") no-repeat;
+}
+
+#stat {
+	color: rgb(255, 255, 255);
+	tborder: 1px red solid;
+	text-align: right;
+	font-family: "Droid Sans Fallback", Georgia, Serif;
+}
+
+#gameTitle {
+	color: rgb(0, 230, 0);
+	font-size: 2em;
+	font-family: "Impact", Georgia, Serif;
+	margin: auto;
+	text-align: center;
+	tborder: 1px red solid;
+}
+
+#messageArea {
+	color: rgb(0, 230, 0);
+	font-size: 1.875em;
+	font-family: "Impact", Georgia, Serif;
+	tpadding: 0.8em 0 0 1.5em;
+	margin: auto;
+	text-align: center;
+	tborder: 1px red solid;
+}
+.hit {
+	background: url("ship.png") no-repeat center center;
+}
+.miss {
+	background: url("miss.png") no-repeat center center;
+}
+table {
+	border-spacing: 0px; 
+	/* could use border-collapse instead */
+	/* border-collapse: collapse; */
+	position: absolute;
+	left: 173px;
+	top: 98px;
+}
+td {
+	width: 94px;
+	height: 94px;
+}
+form {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 15px;
+	background-color: rgb(83, 175, 19);
+}
+form input {
+	background-color: rgb(152, 207, 113);
+	border-color: rgb(83, 175, 19);
+	font-size: 1em;
+}
