@@ -35,9 +35,7 @@ var model = {
 				return true;
 			}
 		}
-		if(this.misses.indexOf(guess) >0){
-			return false;
-		}else{
+		if(this.misses.indexOf(guess) < 0){
 			this.misses.push(guess);
 			this.guesses++;
 			view.displayStat();
