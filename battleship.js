@@ -101,7 +101,6 @@ var model = {
 		}
 		return false;
 	}
-	
 }; 
 
 
@@ -131,8 +130,6 @@ var view = {
 var controller = {
 
 	fireGuess: function(location) {
-		
-		this.guesses++;
 		var hit = model.fire(location);
 		if (hit && model.shipsSunk === model.numShips) {
 			view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses. Refresh to restart game.");
@@ -146,28 +143,19 @@ var controller = {
 	}
 }
 
-
-
-
-/*write handler for onclick cells*/
-function clickToFire(e){
-	//get id of cell from event
-	cellid = e.target.id;
-	//provide id as guess
-	controller.fireGuess(cellid);
-}
-
 // init - called when the page has completed loading
 
-window.onload = init;
-
-function init() {	
+window.onload = function() {	
 	model.generateShipLocations();
 	view.displayStat();
 	//Handle click on board to guess
-	/*assign onclick to all cells*/
 	var cells = document.getElementsByTagName("td"); 
 	for (var i = 0; i < cells.length; i++){
-		cells[i].onclick = clickToFire;
+		cells[i].onclick = function clickToFire(e){
+			//get id of cell from event
+			cellid = e.target.id;
+			//provide id as guess
+			controller.fireGuess(cellid);
+		}
 	}
 }
